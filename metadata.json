@@ -1,0 +1,8 @@
+{
+  "name": "Briskies Cafe",
+  "description": "Engaging, interactive full menu website for Briskies cafe with smooth scrolling animations and bold design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

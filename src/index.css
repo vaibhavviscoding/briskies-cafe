@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-logo: 'Outfit', sans-serif;
+  --font-accent: 'Caveat', cursive;
+}
+
+:root {
+  --brand-amber: #F59E0B;
+  --brand-amber-dark: #D97706;
+  --brand-crimson: #E11D48;
+  --brand-crimson-dark: #BE123C;
+  --brand-emerald: #059669;
+  --brand-surface: #FAFAF8;
+  --brand-card: #FFFFFF;
+  --brand-text: #18181B;
+  --brand-muted: #71717A;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #18181B;
+  background-color: #FAFAF8;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F4F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+::selection {
+  background-color: #FDE68A;
+  color: #78350F;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Glassmorphism & Surface Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(228, 228, 231, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(24, 24, 27, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+/* Micro-interaction shadow tokens */
+.shadow-soft-sm {
+  box-shadow: 0 2px 8px -2px rgba(24, 24, 27, 0.05), 0 1px 4px -1px rgba(24, 24, 27, 0.03);
+}
+
+.shadow-soft-md {
+  box-shadow: 0 10px 25px -5px rgba(24, 24, 27, 0.06), 0 8px 10px -6px rgba(24, 24, 27, 0.04);
+}
+
+.shadow-soft-xl {
+  box-shadow: 0 20px 40px -15px rgba(24, 24, 27, 0.08), 0 12px 20px -8px rgba(24, 24, 27, 0.04);
+}
+
+.shadow-hover-glow {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shadow-hover-glow:hover {
+  box-shadow: 0 20px 35px -10px rgba(245, 158, 11, 0.25);
+}
+
+/* Veg Indicator Dot */
+.veg-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #059669;
+  border-radius: 4px;
+  background: #ECFDF5;
+}
+.veg-indicator::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #059669;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
